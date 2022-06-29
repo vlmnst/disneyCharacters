@@ -7,10 +7,12 @@ const styles = StyleSheet.create({
         color: 'grey'
     },
     bold: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 11,
+        color:'#391E46'
     },
     blue: {
-        color: 'blue'
+        color: 'black'
     },
     big: {
         fontSize: 20
