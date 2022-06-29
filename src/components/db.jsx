@@ -4,6 +4,11 @@ import { View } from "react-native-web";
 import data from "../../data.json";
 import DbItem from "./dbitem";
 
+// usermauro 2
+// usermauro 3
+
+let a;
+
 const Db = () => {
   return (
 
