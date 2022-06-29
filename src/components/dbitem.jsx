@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     margin: 5,
     width: 100,
-    backgroundColor: '#FBD1B0',
+    backgroundColor: '#581845',
     borderRadius: 5,
     overflow: "hidden",
     justifyContent:'center',

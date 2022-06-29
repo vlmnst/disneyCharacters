@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import data from "../../data.json";
 import DbItem from "./dbitem";
 
@@ -10,10 +10,10 @@ const Db = () => {
       contentContainerStyle={styles.list}
       numColumns={3}
       extraData={data.id}
-      horizontal={false}
       data={data}
       renderItem={({ item: repo }) => (
-        <DbItem  { ...repo} />
+          <DbItem  { ...repo} />
+        
       )}
     />
   );

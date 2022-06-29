@@ -3,13 +3,14 @@ import { Text, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     text: {
-        fontSize: 12,
-        color: 'grey'
+        fontSize: 14,
+        color: '#FFFFFF',
+        fontWeight:'bold',
     },
     bold: {
         fontWeight: 'bold',
         fontSize: 11,
-        color:'#391E46'
+        color:'#FFFFFF'
     },
     blue: {
         color: 'black'
