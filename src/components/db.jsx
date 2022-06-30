@@ -5,10 +5,6 @@ import { getAllCharacters } from "../../Reducers";
 import DbItem from "./dbitem";
 // import json from "../../data.json"
 
-// usermauro 2
-// usermauro 3
-// usermauro 4
-
 let a;
 
 const Db = () => {
@@ -16,11 +12,7 @@ const Db = () => {
   
   const dispatch = useDispatch();
   useEffect(() => { dispatch(getAllCharacters()) }, [dispatch]);
-  let databruto = useSelector((state) => state.ALL_CHARACTERS.allItemFiltered);
-  let data=databruto.data
-  // data = data.data.slice(0,24);
-  // console.log(data)
-  // console.log(json)
+  let data = useSelector((state) => state.ALL_CHARACTERS.allItemFiltered);
 
   return (
 
