@@ -1,17 +1,13 @@
 import React from "react";
-import Constants from 'expo-constants'
-import { Text, View } from "react-native";
+import { Text, View,style} from "react-native";
 import Db from './db.jsx'
+import Nav from "./Nav.jsx";
 
 const Main = () => {
-    return(
-        <View style={{
-            flexDirection: "row"
-          }}>
-            <Text>Title 
-             <Db/>   
-            </Text>
-            
+    return (
+        <View style={{backgroundColor:"#78909C"}}>
+            <Nav/>
+            <Db />
         </View>
     )
 }
