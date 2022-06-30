@@ -5,10 +5,20 @@ import StyledText from "./StyledText";
 
 const DbItem = (props) => {
     return (
-        <View key={props.id} style={styles.container} >
-            <StyledText bold blue> {props.name}</StyledText>
+        <View 
+        key={props.id} 
+        style={styles.container}>
+            <View style={styles.element} >
             <Image style={styles.image} source={{ uri: props.imageUrl }} />
-            <TouchableHighlight ><Text>eliminar</Text></TouchableHighlight>
+            <StyledText style={styles.title}> {props.name}</StyledText>
+            </View>
+            
+            
+            <TouchableHighlight >
+                <View style={styles.btn}>
+                    <Text>Ingresar</Text>
+                </View>
+            </TouchableHighlight>
         </View>
     )
 
@@ -17,20 +27,37 @@ const DbItem = (props) => {
 
 const styles = StyleSheet.create({
     container: {
+        marginTop:10,
         width:100,
-        padding: 20,
-        paddingBottom: 5,
-        paddingTop: 5,
         alignItems:"center",
+        
+    },
+    element:{
+        borderRadius:6,
+        borderWidth:2,
+        width:90,
+        height:90,
+        backgroundColor:"#F0B27A",
+
     },
     image: {
-        width: 48,
-        height: 48,
+        width: 86,
+        height: 50,
         borderRadius: 4,
         overflow: "hidden"
     },
+    title:{
+        alignSelf:"center", 
+        width: 90,
+        color: "#566573",
+        fontStyle:"verdana"
+    },
     btn:{
-        height:200,
+        margin:5,
+        backgroundColor: "#CCCCFF",
+        borderRadius:6,
+        borderWidth:2,
+        borderColor:"#CCFFFF",
     }
 })
 export default DbItem
