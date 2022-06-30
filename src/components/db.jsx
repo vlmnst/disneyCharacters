@@ -1,33 +1,43 @@
-import React from "react";
-import { Text, FlatList, StyleSheet } from "react-native";
-import { View } from "react-native-web";
-import data from "../../data.json";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { FlatList, StyleSheet,View  } from "react-native";
+import { getAllCharacters } from "../../Reducers";
 import DbItem from "./dbitem";
-
-// usermauro 2
-// usermauro 3
+// import json from "../../data.json"
 
 let a;
 
 const Db = () => {
+  
+  
+  const dispatch = useDispatch();
+  useEffect(() => { dispatch(getAllCharacters()) }, [dispatch]);
+  let data = useSelector((state) => state.ALL_CHARACTERS.allItemFiltered);
+
   return (
 
     <FlatList
+      numColumns={3}
+      contentContainerStyle={styles.list}
       data={data}
       renderItem={({ item: repo }) => (
-        <View style={{
-            flexDirection: "row"
-          }} >
-        <DbItem  { ...repo} />
+        <View >
+          <DbItem  {...repo} />
         </View>
+
       )}
     />
   );
 };
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 20,
-    },
-  });
+  list: {
+    // overflow:"hidden",
+    borderWidth: 12,
+    borderColor: "#78909C",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "#566573",
+  }
+});
+
 export default Db;
