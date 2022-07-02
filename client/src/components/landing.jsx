@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { View,Image,Button,Text, StyleSheet } from "react-native";
 import { getAllCharacters } from "../../Reducers";
 
-const Landing = () => {
+const Landing = ({ navigation }) => {
     
     const [state,setState]= useState({
         slideIndex:0,
@@ -67,14 +67,23 @@ const Landing = () => {
                     onPress = {(e)=>{plusSlides(next)}}></Button>
                 </View>
             </View>
+            <View style={styles.subConteiner}>
+                <View style={styles.btnList}>
+                    <Button
+                    color="#f194ff"
+                    title="List Of Characters"
+                    onPress = {()=>{navigation.navigate('List')}}></Button>
+                </View>
+            </View>
         </View>
     )
 };
 
 const styles = StyleSheet.create({
   conteiner: {
-    alignItems : "center",
-    margin:20
+   alignItems : "center",
+   backgroundColor:"#78909C",
+   felx: 1
   },
   text: {
     fontSize:30,
@@ -82,8 +91,8 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius:40,
-    width: 600, 
-    height: 400 
+    width: 370, 
+    height: 370 
   },
   subConteiner: {
     width: 700, 
@@ -93,6 +102,9 @@ const styles = StyleSheet.create({
   btn: {
     width: 100,
     padding:20
+  },
+  btnList: {
+    width:150,
   }
 })
 export default Landing

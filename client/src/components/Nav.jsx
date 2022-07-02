@@ -1,8 +1,10 @@
 import React from "react";
 import { Text,View, StyleSheet,TouchableHighlight} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Nav = () => {
     return (
+        <SafeAreaView>
         <View style={styles.container}>
             <TouchableHighlight >
                 <View >
@@ -15,6 +17,7 @@ const Nav = () => {
                 </View>
             </TouchableHighlight>
         </View>
+    </SafeAreaView>
     )
 }
 
