@@ -7,7 +7,6 @@ import store from './Store';
 export default function App() {
   return (
     <Provider store={store}>
-      <Nav/>
       <Main/>
     </Provider>
       );

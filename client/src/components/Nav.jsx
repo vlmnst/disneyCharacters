@@ -1,49 +1,46 @@
 import React from "react";
-import { Text,View, StyleSheet,TouchableHighlight} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Text,View, StyleSheet,TouchableHighlight, Button} from "react-native";
 
-const Nav = () => {
+const Nav = ({ navigation }) => {
     return (
-        <SafeAreaView>
+      
         <View style={styles.container}>
             <TouchableHighlight >
                 <View >
                     <Text style={styles.btn} >Home</Text>
                 </View>
             </TouchableHighlight>
-            <TouchableHighlight >
-                <View >
-                    <Text style={styles.btn} >Ingresar</Text>
+       
+            <View style={styles.btn}>
+                    <Button
+                    title = "Login"
+                    onPress = { ()=>{navigation.navigate('Login')}}></Button>
                 </View>
-            </TouchableHighlight>
+    
         </View>
-    </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: 50,
         flexDirection:"row",
         justifyContent:"space-around",
         // width:"max", cuidado con algunas propiedades
-        height:40,
+        width: '100%' ,
+        height:50,
         alignItems:"center",
         backgroundColor: "#CCFFFF",
-        borderRadius:6,
-        borderWidth:2,
-        borderColor:"#566573",
-        
     },
     btn:{
         color:"#CCFFFF",
         textAlign:"center",
+        justifyContent: 'center',
         width:100,
         height:30,
-        margin:1,
+        // margin:1,
         backgroundColor: "#78909C",
         borderRadius:6,
-        borderWidth:2,
-        borderColor:"#566573",
         
     },
 });

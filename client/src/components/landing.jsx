@@ -3,9 +3,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { View,Image,Button,Text, StyleSheet } from "react-native";
 import { getAllCharacters } from "../../Reducers";
+import Nav from "./Nav";
 
 const Landing = ({ navigation }) => {
-    
+    console.log(navigation)
     const [state,setState]= useState({
         slideIndex:0,
     })
@@ -48,6 +49,7 @@ const Landing = ({ navigation }) => {
 
     return (
         <View style={styles.conteiner}>
+            <Nav navigation={navigation}/>
             <Text style={ styles.text }>{title}</Text>
             <Image 
                 style={styles.image}
@@ -72,7 +74,7 @@ const Landing = ({ navigation }) => {
                     <Button
                     color="#f194ff"
                     title="List Of Characters"
-                    onPress = {()=>{navigation.navigate('List')}}></Button>
+                    onPress = { ()=>{navigation.navigate('List')} }></Button>
                 </View>
             </View>
         </View>
