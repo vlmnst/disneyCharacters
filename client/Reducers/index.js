@@ -17,7 +17,7 @@ export const userSlice = createSlice({
 
 export const getAllCharacters = ()=> async(dispatch) => {
     try {
-        var json = await axios.get("http://localhost:3001/characters/getCharacters")
+        var json = await axios.get("http://192.168.0.106:3001/characters/getCharacters")
         dispatch(userSlice.actions.getAllCharacters(json.data))
 
     } catch (e) {
