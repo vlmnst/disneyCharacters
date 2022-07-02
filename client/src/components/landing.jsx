@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { View,Image,Button,Text } from "react-native";
+import { View,Image,Button,Text, StyleSheet } from "react-native";
 import { getAllCharacters } from "../../Reducers";
 
 const Landing = () => {
@@ -47,20 +47,20 @@ const Landing = () => {
     }
 
     return (
-        <View style={{ alignItems : "center",margin:20}}>
-            <Text style={{ fontSize:30,color:"black"}}>{title}</Text>
+        <View style={styles.conteiner}>
+            <Text style={ styles.text }>{title}</Text>
             <Image 
-                style={{ borderRadius:40,width: 600, height: 400 }}
+                style={styles.image}
                 source={{uri:image }} 
                 />
-            <View style={{width: 700, flexDirection:"row", justifyContent:"space-around"}}>
-                <View style={{ width: 100,padding:20}}>
+            <View style={styles.subConteiner}>
+                <View style={styles.btn}>
                     <Button
                     color="#f194ff"
                     title="Back"
                     onPress = {(e)=>{plusSlides(back)}}></Button>
                 </View>
-                <View style={{ width: 100,padding:20}}>
+                <View style={styles.btn}>
                     <Button 
                     color="#f194ff"
                     title="Next"
@@ -70,4 +70,29 @@ const Landing = () => {
         </View>
     )
 };
+
+const styles = StyleSheet.create({
+  conteiner: {
+    alignItems : "center",
+    margin:20
+  },
+  text: {
+    fontSize:30,
+    color:"black"
+  },
+  image: {
+    borderRadius:40,
+    width: 600, 
+    height: 400 
+  },
+  subConteiner: {
+    width: 700, 
+    flexDirection:"row", 
+    justifyContent:"space-around"
+  },
+  btn: {
+    width: 100,
+    padding:20
+  }
+})
 export default Landing

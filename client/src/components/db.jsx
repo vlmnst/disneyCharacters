@@ -34,7 +34,7 @@ const Db = () => {
 const styles = StyleSheet.create({
   list: {
     // overflow:"hidden",
-    borderWidth: 12,
+    // borderWidth: 12,
     borderColor: "#78909C",
     flexDirection: "column",
     alignItems: "center",

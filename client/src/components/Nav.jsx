@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection:"row",
         justifyContent:"space-around",
-        width:"max",
+        // width:"max", cuidado con algunas propiedades
         height:40,
         alignItems:"center",
         backgroundColor: "#CCFFFF",
