@@ -6,7 +6,7 @@ import { getAllCharacters } from "../../Reducers";
 import Nav from "./Nav";
 
 const Landing = ({ navigation }) => {
-    console.log(navigation)
+
     const [state,setState]= useState({
         slideIndex:0,
     })

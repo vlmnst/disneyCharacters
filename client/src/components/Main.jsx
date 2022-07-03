@@ -6,6 +6,7 @@ import Landing from "./landing";
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import Login from "./Login.jsx";
+import Carousel from './CarruselImage'
 
 const Stack = createNativeStackNavigator()
 
@@ -31,6 +32,10 @@ const Main = () => {
                 <Stack.Screen
                 name = 'Nav'
                 component = { Nav }
+                />
+                <Stack.Screen
+                name = 'Carousel'
+                component = { Carousel }
                 />
             </Stack.Navigator>
         </NavigationContainer >

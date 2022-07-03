@@ -1,15 +1,16 @@
 import React from "react";
 import { Text,View, StyleSheet,TouchableHighlight, Button} from "react-native";
 
-const Nav = ({ navigation }) => {
+const Nav = ({ navigation, props }) => {
+   
     return (
       
         <View style={styles.container}>
-            <TouchableHighlight >
-                <View >
-                    <Text style={styles.btn} >Home</Text>
+           <View style={styles.btn}>
+                    <Button
+                    title = "Carousel"
+                    onPress = { ()=>{navigation.navigate('Carousel')}}></Button>
                 </View>
-            </TouchableHighlight>
        
             <View style={styles.btn}>
                     <Button
