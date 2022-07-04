@@ -1,46 +1,47 @@
 import React from "react";
-import { Text,View, StyleSheet,TouchableHighlight} from "react-native";
+import { Text,View, StyleSheet,TouchableHighlight, Button} from "react-native";
 
-const Nav = () => {
+const Nav = ({ navigation, props }) => {
+   
     return (
+      
         <View style={styles.container}>
-            <TouchableHighlight >
-                <View >
-                    <Text style={styles.btn} >Home</Text>
+           <View style={styles.btn}>
+                    <Button
+                    title = "Carousel"
+                    onPress = { ()=>{navigation.navigate('Carousel')}}></Button>
                 </View>
-            </TouchableHighlight>
-            <TouchableHighlight >
-                <View >
-                    <Text style={styles.btn} >Ingresar</Text>
+       
+            <View style={styles.btn}>
+                    <Button
+                    title = "Login"
+                    onPress = { ()=>{navigation.navigate('Login')}}></Button>
                 </View>
-            </TouchableHighlight>
+    
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: 50,
         flexDirection:"row",
         justifyContent:"space-around",
-        width:"max",
-        height:40,
+        // width:"max", cuidado con algunas propiedades
+        width: '100%' ,
+        height:50,
         alignItems:"center",
         backgroundColor: "#CCFFFF",
-        borderRadius:6,
-        borderWidth:2,
-        borderColor:"#566573",
-        
     },
     btn:{
         color:"#CCFFFF",
         textAlign:"center",
+        justifyContent: 'center',
         width:100,
         height:30,
-        margin:1,
+        // margin:1,
         backgroundColor: "#78909C",
         borderRadius:6,
-        borderWidth:2,
-        borderColor:"#566573",
         
     },
 });
